@@ -4,7 +4,7 @@ A personal portfolio website showcasing my experience, projects, education, and 
 
 ## Live Demo
 
-Replace this with your deployed site link once published.
+(https://sibabalwe-portfolio-eight.vercel.app/)
 
 ## About
 
