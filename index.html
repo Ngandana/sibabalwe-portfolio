@@ -5,9 +5,57 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Sibabalwe Ngandana — Full-Stack Software Developer based in Cape Town, South Africa. React, Node.js, Java, Spring Boot, PostgreSQL.">
 <title>Sibabalwe Ngandana — Full-Stack Developer</title>
+<link rel="canonical" href="https://sibabalwe-portfolio-eight.vercel.app/">
+<meta name="theme-color" content="#0A0A0A">
+<meta name="robots" content="index,follow">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Sibabalwe Ngandana — Full-Stack Software Developer">
+<meta property="og:description" content="Full-Stack Software Developer based in Cape Town, South Africa. React, Node.js, Java, Spring Boot, PostgreSQL.">
+<meta property="og:url" content="https://sibabalwe-portfolio-eight.vercel.app/">
+<!-- TODO: drop a 1200x630 og-image.png in the repo root (e.g. a screenshot of the hero section) to complete social preview cards -->
+<meta property="og:image" content="https://sibabalwe-portfolio-eight.vercel.app/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="Sibabalwe Ngandana">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Sibabalwe Ngandana — Full-Stack Software Developer">
+<meta name="twitter:description" content="Full-Stack Software Developer based in Cape Town, South Africa.">
+<meta name="twitter:image" content="https://sibabalwe-portfolio-eight.vercel.app/og-image.png">
+
+<!-- Favicon — inline SVG "SN" monogram, no binary asset needed -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%20100'%3E%3Crect%20width='100'%20height='100'%20rx='22'%20fill='%230A0A0A'/%3E%3Ctext%20x='50'%20y='66'%20font-family='Arial,sans-serif'%20font-weight='700'%20font-size='44'%20fill='%23F5A623'%20text-anchor='middle'%3ESN%3C/text%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%20100'%3E%3Crect%20width='100'%20height='100'%20rx='22'%20fill='%230A0A0A'/%3E%3Ctext%20x='50'%20y='66'%20font-family='Arial,sans-serif'%20font-weight='700'%20font-size='44'%20fill='%23F5A623'%20text-anchor='middle'%3ESN%3C/text%3E%3C/svg%3E">
+<link rel="manifest" href="manifest.json">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Sibabalwe Ngandana",
+  "jobTitle": "Full-Stack Software Developer",
+  "email": "mailto:sibabalwengandana@gmail.com",
+  "url": "https://sibabalwe-portfolio-eight.vercel.app/",
+  "sameAs": ["https://github.com/Ngandana"],
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Cape Town",
+    "addressCountry": "ZA"
+  },
+  "alumniOf": {
+    "@type": "CollegeOrUniversity",
+    "name": "Cape Peninsula University of Technology"
+  },
+  "knowsAbout": ["Java", "Spring Boot", "React", "Node.js", "PostgreSQL", "Python", "FastAPI"]
+}
+</script>
 <style>
 /* ══════════════════════════════════════════
    TOKENS
@@ -666,6 +714,16 @@ nav.scrolled{background:rgba(10,10,10,0.92);border-color:rgba(240,237,230,0.1)}
   color:var(--amber);
 }
 
+.gh-stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.75rem}
+.gh-stat{display:flex;flex-direction:column;gap:.25rem;min-width:0}
+.gh-stat-num{
+  font-family:'Space Grotesk',sans-serif;font-size:1.3rem;font-weight:700;
+  color:var(--amber);line-height:1.15;
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+}
+.gh-stat-lbl{font-family:'Space Mono',monospace;font-size:10px;color:var(--white-muted);letter-spacing:.05em;text-transform:uppercase}
+.gh-lang-tags{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.25rem}
+
 /* ══════════════════════════════════════════
    EXPERIENCE
 ══════════════════════════════════════════ */
@@ -884,6 +942,25 @@ nav.scrolled{background:rgba(10,10,10,0.92);border-color:rgba(240,237,230,0.1)}
   content:'';width:5px;height:5px;background:var(--amber);
   border-radius:50%;
 }
+
+/* project screenshot preview (live projects only) */
+.project-card.has-shot{padding:0}
+.project-card.has-shot .project-card-body{
+  padding:2rem;display:flex;flex-direction:column;gap:1.1rem;flex:1;
+}
+.project-shot-wrap{
+  position:relative;overflow:hidden;
+  aspect-ratio:16/9;
+  background:var(--surface-2);
+  border-bottom:1px solid var(--border);
+}
+.project-shot-wrap img{
+  width:100%;height:100%;object-fit:cover;object-position:top;
+  display:block;
+  transition:transform 400ms var(--spring);
+}
+.project-card:hover .project-shot-wrap img{transform:scale(1.04)}
+.project-shot-wrap.shot-failed{display:none}
 
 /* ══════════════════════════════════════════
    EDUCATION
@@ -1123,6 +1200,7 @@ footer{
   .about-stats{grid-template-columns:1fr 1fr}
   .bento{grid-template-columns:1fr}
   .bento-card.col-2{grid-column:span 1}
+  .gh-stats-grid{grid-template-columns:1fr 1fr}
   .contact-links-row{flex-direction:column;align-items:center}
 }
 @media(max-width:768px){
@@ -1244,6 +1322,60 @@ footer{
   background:var(--surface-2);border:1px solid var(--border);
   border-radius:3px;padding:1px 5px;font-size:10px;
 }
+
+/* ══════════════════════════════════════════
+   CASE STUDY MODAL
+══════════════════════════════════════════ */
+.case-study-btn{background:none;border:none;font:inherit;padding:0}
+#case-overlay{
+  position:fixed;inset:0;
+  background:rgba(0,0,0,0.75);
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+  z-index:500;
+  display:flex;align-items:center;justify-content:center;
+  padding:5vh 1.5rem;
+  opacity:0;pointer-events:none;
+  transition:opacity 220ms var(--ease);
+}
+#case-overlay.open{opacity:1;pointer-events:all}
+#case-box{
+  width:100%;max-width:680px;max-height:88vh;overflow-y:auto;
+  background:var(--surface-1);
+  border:1px solid rgba(245,166,35,0.2);
+  border-radius:var(--r-lg);
+  padding:2rem;position:relative;
+  box-shadow:0 40px 100px rgba(0,0,0,0.7),0 0 0 1px rgba(245,166,35,0.08);
+  transform:translateY(16px) scale(0.97);
+  transition:transform 240ms var(--spring);
+}
+#case-overlay.open #case-box{transform:translateY(0) scale(1)}
+#case-close{
+  position:absolute;top:1rem;right:1rem;
+  width:32px;height:32px;
+  background:var(--surface-2);border:1px solid var(--border);
+  border-radius:50%;color:var(--white-dim);
+  font-size:18px;line-height:1;cursor:none;
+  display:flex;align-items:center;justify-content:center;
+  transition:color 200ms,border-color 200ms;
+}
+#case-close:hover{color:var(--amber);border-color:rgba(245,166,35,0.35)}
+#case-close:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
+.case-shot-wrap{
+  border-radius:var(--r-md);overflow:hidden;
+  aspect-ratio:16/9;margin-bottom:1.25rem;
+  background:var(--surface-2);
+}
+.case-shot-wrap img{width:100%;height:100%;object-fit:cover;display:block}
+.case-shot-wrap.hidden{display:none}
+.case-block{margin:1.1rem 0}
+.case-block h4{
+  font-family:'Space Mono',monospace;font-size:11px;
+  color:var(--amber);text-transform:uppercase;letter-spacing:.08em;
+  margin-bottom:.4rem;
+}
+.case-block p,.case-block li{font-size:13.5px;color:var(--white-dim);line-height:1.7}
+.case-block ul{padding-left:1.1rem}
 
 /* ══════════════════════════════════════════
    TOAST NOTIFICATION
@@ -1729,6 +1861,16 @@ footer{
             <span class="bento-tag">RBAC</span>
           </div>
         </div>
+        <div class="bento-card col-2 gh-stats-card" role="listitem" id="gh-stats-card">
+          <p class="bento-label">GitHub</p>
+          <h3 class="bento-title">Live activity — github.com/Ngandana</h3>
+          <div class="gh-stats-grid" id="gh-stats-body">
+            <div class="gh-stat"><span class="gh-stat-num">—</span><span class="gh-stat-lbl">Public repos</span></div>
+            <div class="gh-stat"><span class="gh-stat-num">—</span><span class="gh-stat-lbl">Total stars</span></div>
+            <div class="gh-stat"><span class="gh-stat-num">—</span><span class="gh-stat-lbl">Last updated</span></div>
+            <div class="gh-stat"><span class="gh-stat-num">—</span><span class="gh-stat-lbl">On</span></div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -1822,10 +1964,18 @@ footer{
             GitHub
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
           </a>
+          <button class="project-link case-study-btn" data-case-study="p1" aria-haspopup="dialog">
+            Case study
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+          </button>
         </div>
       </article>
 
-      <article class="project-card reveal tilt-card" aria-labelledby="p2-title">
+      <article class="project-card reveal tilt-card has-shot" aria-labelledby="p2-title">
+        <div class="project-shot-wrap" id="shot-itsm">
+          <img src="https://api.microlink.io/?url=https%3A%2F%2Fpillar5ticket-system.vercel.app%2F&screenshot=true&meta=false&embed=screenshot.url" alt="Screenshot of the IT Service Management Platform dashboard" width="640" height="360" loading="lazy" onerror="this.parentElement.classList.add('shot-failed')">
+        </div>
+        <div class="project-card-body">
         <div class="project-num">
           <span>02</span>
           <div class="project-arrow" aria-hidden="true">
@@ -1853,6 +2003,11 @@ footer{
             GitHub
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
           </a>
+          <button class="project-link case-study-btn" data-case-study="p2" aria-haspopup="dialog">
+            Case study
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+          </button>
+        </div>
         </div>
       </article>
 
@@ -1879,6 +2034,10 @@ footer{
             GitHub
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
           </a>
+          <button class="project-link case-study-btn" data-case-study="p3" aria-haspopup="dialog">
+            Case study
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+          </button>
         </div>
       </article>
 
@@ -1905,11 +2064,19 @@ footer{
             GitHub
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
           </a>
+          <button class="project-link case-study-btn" data-case-study="p4" aria-haspopup="dialog">
+            Case study
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+          </button>
         </div>
       </article>
 
       <!-- Compass Fisheries — LIVE -->
-      <article class="project-card reveal reveal-delay-1 tilt-card" aria-labelledby="p5-title">
+      <article class="project-card reveal reveal-delay-1 tilt-card has-shot" aria-labelledby="p5-title">
+        <div class="project-shot-wrap" id="shot-compass">
+          <img src="https://api.microlink.io/?url=https%3A%2F%2Fcompass-fisheries.vercel.app%2F&screenshot=true&meta=false&embed=screenshot.url" alt="Screenshot of the Compass Fisheries order and management app" width="640" height="360" loading="lazy" onerror="this.parentElement.classList.add('shot-failed')">
+        </div>
+        <div class="project-card-body">
         <div class="project-num">
           <span>05</span>
           <div class="project-arrow" aria-hidden="true">
@@ -1936,6 +2103,11 @@ footer{
             GitHub
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
           </a>
+          <button class="project-link case-study-btn" data-case-study="p5" aria-haspopup="dialog">
+            Case study
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+          </button>
+        </div>
         </div>
       </article>
 
@@ -2081,6 +2253,22 @@ footer{
       <span><kbd>↵</kbd> select</span>
       <span><kbd>ESC</kbd> close</span>
     </div>
+  </div>
+</div>
+
+<!-- ══ CASE STUDY MODAL ══ -->
+<div id="case-overlay" role="dialog" aria-modal="true" aria-labelledby="case-title" aria-hidden="true">
+  <div id="case-box">
+    <button id="case-close" aria-label="Close case study">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <div class="case-shot-wrap hidden" id="case-shot-wrap"><img id="case-shot-img" alt=""></div>
+    <p class="project-type" id="case-type"></p>
+    <h3 class="section-heading" id="case-title" style="font-size:1.6rem;margin-bottom:.5rem"></h3>
+    <div class="case-block"><h4>Problem</h4><p id="case-problem"></p></div>
+    <div class="case-block"><h4>Approach</h4><p id="case-approach"></p></div>
+    <div class="case-block"><h4>Impact</h4><ul id="case-impact"></ul></div>
+    <div class="project-stack" id="case-stack" style="margin-top:1rem"></div>
   </div>
 </div>
 
@@ -2423,6 +2611,179 @@ topBtn?.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}))
     });
   },{threshold:0.5});
   targets.forEach(t=>{ if(t.el) cObs.observe(t.el); });
+})();
+
+/* ─────────────────────────────────────────
+   LIVE GITHUB STATS
+───────────────────────────────────────── */
+(function(){
+  const body=document.getElementById('gh-stats-body');
+  if(!body) return;
+  const CACHE_KEY='gh-stats-cache-v1';
+  const USER='Ngandana';
+
+  function formatDate(iso){
+    if(!iso) return '—';
+    return new Date(iso).toLocaleDateString('en-ZA',{month:'short',day:'numeric'});
+  }
+
+  function render(data,isStale){
+    body.innerHTML=`
+      <div class="gh-stat"><span class="gh-stat-num">${data.publicRepos}</span><span class="gh-stat-lbl">Public repos</span></div>
+      <div class="gh-stat"><span class="gh-stat-num">${data.totalStars}</span><span class="gh-stat-lbl">Total stars</span></div>
+      <div class="gh-stat"><span class="gh-stat-num" title="${data.recentName||''}">${data.recentName||'—'}</span><span class="gh-stat-lbl">Last updated</span></div>
+      <div class="gh-stat"><span class="gh-stat-num">${formatDate(data.recentDate)}</span><span class="gh-stat-lbl">${isStale?'Cached':'Live'}</span></div>
+      ${data.topLangs.length?`<div class="gh-lang-tags">${data.topLangs.map(l=>`<span class="bento-tag">${l}</span>`).join('')}</div>`:''}
+    `;
+  }
+
+  async function loadStats(){
+    try{
+      const [userRes,reposRes]=await Promise.all([
+        fetch(`https://api.github.com/users/${USER}`),
+        fetch(`https://api.github.com/users/${USER}/repos?sort=updated&per_page=100`)
+      ]);
+      if(!userRes.ok||!reposRes.ok) throw new Error('gh-api-error');
+      const user=await userRes.json();
+      const repos=await reposRes.json();
+      if(!Array.isArray(repos)) throw new Error('gh-api-shape');
+
+      const publicRepos=user.public_repos;
+      const totalStars=repos.reduce((s,r)=>s+(r.stargazers_count||0),0);
+      const langCounts={};
+      repos.forEach(r=>{ if(r.language) langCounts[r.language]=(langCounts[r.language]||0)+1; });
+      const topLangs=Object.entries(langCounts).sort((a,b)=>b[1]-a[1]).slice(0,5).map(([l])=>l);
+      const mostRecent=repos[0];
+      const data={publicRepos,totalStars,topLangs,recentName:mostRecent?.name,recentDate:mostRecent?.updated_at};
+
+      localStorage.setItem(CACHE_KEY,JSON.stringify({data,ts:Date.now()}));
+      render(data,false);
+    }catch(err){
+      try{
+        const cached=localStorage.getItem(CACHE_KEY);
+        if(cached){ render(JSON.parse(cached).data,true); }
+        else{ document.getElementById('gh-stats-card')?.style.setProperty('display','none'); }
+      }catch(_e){
+        document.getElementById('gh-stats-card')?.style.setProperty('display','none');
+      }
+    }
+  }
+
+  loadStats();
+})();
+
+/* ─────────────────────────────────────────
+   CASE STUDY MODAL
+───────────────────────────────────────── */
+(function(){
+  const overlay=document.getElementById('case-overlay');
+  if(!overlay) return;
+  const box=document.getElementById('case-box');
+  let lastFocused=null;
+
+  const CASE_STUDIES={
+    p1:{
+      type:'Full-Stack · Web App',
+      title:'Arts & Craft E-Commerce Platform',
+      problem:'A team project needed a full e-commerce flow — product listings, category filtering, and a secure, easy checkout for buying arts and crafts.',
+      approach:'Built the backend in Java with Spring Boot and the frontend in Vue.js, with JWT-based authentication and clean REST API contracts so frontend and backend could be developed in parallel by the team.',
+      impact:['30% usability improvement through iterative UI/UX refinements','Clean REST API contracts enabling seamless frontend/backend integration','Team-built, end-to-end e-commerce flow from listing to checkout'],
+      stack:['Java','Spring Boot','Vue.js','MySQL','JWT','REST API'],
+      shot:null
+    },
+    p2:{
+      type:'ITSM · Full-Stack SaaS',
+      title:'IT Service Management Platform',
+      problem:'A client needed a live, production-ready IT support ticketing system with proper access control for administrative and technical staff, and a reliable account/auth flow.',
+      approach:'React 18 + Vite on the frontend, Node.js/Express API, PostgreSQL hosted on Railway. Implemented three-tier RBAC for admin and technical dashboards, JWT auth, email verification via Outlook SMTP, and a forgot-password flow. Deployed across Vercel and Render, with updates packaged as versioned, documented releases.',
+      impact:['Live in production for a real client','Three-tier role-based access control across admin/technical dashboards','Full auth lifecycle: JWT, email verification, and password recovery','Versioned, documented releases for easy client adoption'],
+      stack:['React 18','Node.js','PostgreSQL','Vite','Tailwind','JWT','Nodemailer'],
+      shot:'shot-itsm'
+    },
+    p3:{
+      type:'Python · REST API',
+      title:'University Research Collaboration Platform',
+      problem:'University researchers needed a way to collaborate on projects, manage profiles, and share their research work through a reliable backend platform.',
+      approach:'Built with Python and FastAPI, organised into domain, repository, and service layers to keep the codebase easy to maintain and extend. Built incrementally across 7 assignments, applying clean software design patterns throughout.',
+      impact:['249 passing automated tests keeping the platform reliable as it grew','19 REST endpoints across a 3-layer service architecture','Full CI/CD pipeline via GitHub Actions'],
+      stack:['Python','FastAPI','pytest','GitHub Actions','CI/CD','REST API'],
+      shot:null
+    },
+    p4:{
+      type:'Desktop App · Java',
+      title:'Scooter Rental Service Application',
+      problem:'Employees and customers needed a way to manage scooter rentals end-to-end — account creation, checking availability, and placing orders — with separate tooling for staff and customers.',
+      approach:'Built as a Java desktop application using Swing, with separate admin and customer interfaces and role-based access control, backed by MySQL for persistence.',
+      impact:['Solved concurrent MySQL connectivity challenges for reliable data access and storage','Separate, role-based admin and customer interfaces for efficient management'],
+      stack:['Java','Java Swing','MySQL','RBAC','OOP'],
+      shot:null
+    },
+    p5:{
+      type:'Full-Stack · Operations App',
+      title:'Compass Fisheries Order & Management App',
+      problem:'A live client needed a way to manage order processing, inventory tracking, and day-to-day business workflows for fisheries operations.',
+      approach:'Built with React and Node.js, deployed to production on Vercel, with a clean, role-aware UI tailored to how operational staff actually work.',
+      impact:['Live in production for a real operating client','Streamlined order management and inventory tracking workflows for operational staff'],
+      stack:['React','Node.js','Vercel','REST API','Operations'],
+      shot:'shot-compass'
+    }
+  };
+
+  function render(id){
+    const d=CASE_STUDIES[id];
+    if(!d) return;
+    document.getElementById('case-type').textContent=d.type;
+    document.getElementById('case-title').textContent=d.title;
+    document.getElementById('case-problem').textContent=d.problem;
+    document.getElementById('case-approach').textContent=d.approach;
+    document.getElementById('case-impact').innerHTML=d.impact.map(i=>`<li>${i}</li>`).join('');
+    document.getElementById('case-stack').innerHTML=d.stack.map(s=>`<span class="stack-tag">${s}</span>`).join('');
+    const shotWrap=document.getElementById('case-shot-wrap');
+    const shotImg=document.getElementById('case-shot-img');
+    if(d.shot){
+      const srcImg=document.querySelector('#'+d.shot+' img');
+      if(srcImg && srcImg.currentSrc && !srcImg.closest('.project-shot-wrap').classList.contains('shot-failed')){
+        shotImg.src=srcImg.currentSrc;
+        shotImg.alt=srcImg.alt;
+        shotWrap.classList.remove('hidden');
+      } else {
+        shotWrap.classList.add('hidden');
+      }
+    } else {
+      shotWrap.classList.add('hidden');
+    }
+  }
+
+  function openCase(id, triggerEl){
+    lastFocused=triggerEl||document.activeElement;
+    render(id);
+    overlay.classList.add('open');
+    overlay.setAttribute('aria-hidden','false');
+    document.body.style.overflow='hidden';
+    document.getElementById('case-close').focus();
+  }
+  function closeCase(){
+    overlay.classList.remove('open');
+    overlay.setAttribute('aria-hidden','true');
+    document.body.style.overflow='';
+    lastFocused?.focus();
+  }
+
+  document.querySelectorAll('.case-study-btn').forEach(btn=>{
+    btn.addEventListener('click',()=>openCase(btn.dataset.caseStudy, btn));
+  });
+  overlay.addEventListener('click',e=>{ if(e.target===overlay) closeCase(); });
+  document.getElementById('case-close').addEventListener('click', closeCase);
+  document.addEventListener('keydown',e=>{
+    if(!overlay.classList.contains('open')) return;
+    if(e.key==='Escape'){ closeCase(); return; }
+    if(e.key==='Tab'){
+      const focusables=box.querySelectorAll('button, a, [tabindex]');
+      const first=focusables[0], last=focusables[focusables.length-1];
+      if(e.shiftKey && document.activeElement===first){ e.preventDefault(); last.focus(); }
+      else if(!e.shiftKey && document.activeElement===last){ e.preventDefault(); first.focus(); }
+    }
+  });
 })();
 
 /* ─────────────────────────────────────────
