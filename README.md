@@ -17,19 +17,17 @@ This portfolio highlights:
 
 ## Tech Stack
 
-- HTML5
-- CSS3
-- JavaScript
-- Canvas animations
-- Responsive design
+- React 18 + Vite
+- Three.js / @react-three/fiber (hero particle effect)
+- CSS3 (single global stylesheet, custom properties)
 - Google Fonts
 
 ## Features
 
 - Responsive layout for desktop and mobile
-- Animated hero section
+- Animated hero section with a live 3D particle effect (Antigravity)
 - Custom cursor and scroll progress indicator
-- Interactive skill and project sections
+- Interactive skill and project sections, incl. live GitHub stats and project case-study modals
 - Mobile navigation drawer
 - Accessibility-friendly structure with skip link and focus states
 
@@ -49,13 +47,11 @@ A few featured projects included in the portfolio:
 
 ## Local Run
 
-Since this is a static site, you can open `index.html` directly in your browser.
+This is a Vite + React app and needs a build step.
 
-If you prefer using a local server, run one of these:
-
-### VS Code Live Server
-Open the folder in VS Code and launch `index.html` with Live Server.
-
-### Python
 ```bash
-python -m http.server 8000
+npm install
+npm run dev       # start the dev server
+npm run build     # production build to dist/
+npm run preview   # serve the production build locally
+```
