@@ -58,9 +58,26 @@ export const CASE_STUDIES = {
     approach: 'Built with React and Node.js, deployed to production on Vercel, with a clean, role-aware UI tailored to how operational staff actually work.',
     impact: [
       'Live in production for a real operating client',
-      'Streamlined order management and inventory tracking workflows for operational staff'
+      'Streamlined order management and inventory tracking workflows for operational staff',
+      'Still under active development as new features are rolled out'
     ],
     stack: ['React', 'Node.js', 'Vercel', 'REST API', 'Operations'],
     shot: 'compass'
+  },
+  p6: {
+    type: 'Full-Stack · Fleet Management SaaS',
+    title: 'Pitstop — Fleet Management Platform',
+    problem: 'A small scooter rental business needed a single system to manage bikes and drivers, track mileage, schedule maintenance, and handle rentals and payments — replacing ad-hoc, manual tracking.',
+    approach: 'Built with Next.js 16 (App Router, strict TypeScript) and Supabase/PostgreSQL via Drizzle ORM. Bike and driver records include handover condition photos in Supabase Storage; odometer readings sync from Cartrack telematics to drive kilometer-based service scheduling across 7 default service types. Rentals and payments are tracked through an append-only ledger, and reminders are generated and sent through an outbox pattern (generate → sweep → send). Magic-link auth via Supabase Auth, validation with Zod, and Vitest for testing.',
+    impact: [
+      'Live in production for a real scooter rental business',
+      'Automated, telematics-driven service scheduling instead of manual mileage tracking',
+      'Append-only audit ledgers for rentals, payments, and handovers — full history, never overwritten',
+      'Money handled as integer cents to avoid floating-point errors',
+      'Telematics abstraction layer designed to support providers beyond Cartrack',
+      'Still under active development as new features are rolled out'
+    ],
+    stack: ['Next.js', 'TypeScript', 'Supabase', 'PostgreSQL', 'Drizzle ORM', 'Tailwind CSS', 'Zod', 'Vitest'],
+    shot: 'pitstop'
   }
 };

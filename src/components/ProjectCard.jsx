@@ -24,7 +24,9 @@ function ProjectNum({ num }) {
 function ProjectActions({ project, onOpenCase }) {
   return (
     <div className="project-actions">
-      <span className={`deploy-badge ${project.badge.kind}`}>{project.badge.label}</span>
+      {project.badges.map((b) => (
+        <span className={`deploy-badge ${b.kind}`} key={b.kind}>{b.label}</span>
+      ))}
       {project.liveHref && (
         <a href={project.liveHref} target="_blank" rel="noopener" className="project-link-live" aria-label={project.liveLabel}>
           View Live {externalIcon}
