@@ -7,7 +7,12 @@ const LINKS = [
   { href: '#contact', label: 'Contact', accent: true }
 ];
 
-export default function MobileDrawer({ isOpen, onClose }) {
+export default function MobileDrawer({ isOpen, onClose, onOpenChat }) {
+  function openChat() {
+    onClose();
+    onOpenChat?.();
+  }
+
   return (
     <nav id="mobile-drawer" className={`mobile-drawer${isOpen ? ' open' : ''}`} aria-label="Mobile navigation">
       {LINKS.map((l) => (
@@ -15,6 +20,9 @@ export default function MobileDrawer({ isOpen, onClose }) {
           {l.label}
         </a>
       ))}
+      <button type="button" className="mobile-drawer-chat" onClick={openChat}>
+        Ask AI
+      </button>
     </nav>
   );
 }

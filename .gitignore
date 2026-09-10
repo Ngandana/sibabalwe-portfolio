@@ -2,3 +2,9 @@ node_modules/
 dist/
 .DS_Store
 *.local
+
+# secrets — never commit real keys (.env.example is a placeholder template and IS committed)
+.env
+.env.*
+!.env.example
+.vercel

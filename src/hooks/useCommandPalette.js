@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { COMMANDS } from '../data/commandItems';
 
-export function useCommandPalette(onCopyEmail) {
+export function useCommandPalette(onCopyEmail, onOpenChat) {
   const [isOpen, setIsOpen] = useState(false);
   const [query, setQuery] = useState('');
   const [activeIdx, setActiveIdx] = useState(0);
@@ -22,9 +22,10 @@ export function useCommandPalette(onCopyEmail) {
   const runItem = useCallback((item) => {
     setIsOpen(false);
     if (item.action === 'copy') { onCopyEmail?.(); return; }
+    if (item.action === 'open-ai-chat') { onOpenChat?.(); return; }
     if (item.external) { window.open(item.href, '_blank', 'noopener'); return; }
     if (item.href) { window.location.href = item.href; }
-  }, [onCopyEmail]);
+  }, [onCopyEmail, onOpenChat]);
 
   const open = useCallback(() => {
     setIsOpen(true);

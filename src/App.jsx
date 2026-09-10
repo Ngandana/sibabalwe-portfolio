@@ -13,18 +13,21 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import CommandPalette from './components/CommandPalette';
 import Dock from './components/Dock';
+import AiChat from './components/AiChat';
 import { ToastProvider } from './context/ToastContext';
 import { useScrollProgress } from './hooks/useScrollProgress';
 import { useMobileDrawer } from './hooks/useMobileDrawer';
 import { useCommandPalette } from './hooks/useCommandPalette';
 import { useCopyEmail } from './hooks/useCopyEmail';
 import { useGlobalReveal } from './hooks/useGlobalReveal';
+import { useAiChat } from './hooks/useAiChat';
 
 function AppInner() {
   const { pct, scrolled } = useScrollProgress();
   const drawer = useMobileDrawer();
   const copyEmail = useCopyEmail();
-  const palette = useCommandPalette(copyEmail);
+  const chat = useAiChat();
+  const palette = useCommandPalette(copyEmail, chat.open);
   useGlobalReveal();
 
   return (
@@ -39,7 +42,7 @@ function AppInner() {
         onToggleDrawer={drawer.toggle}
         drawerOpen={drawer.isOpen}
       />
-      <MobileDrawer isOpen={drawer.isOpen} onClose={drawer.closeDrawer} />
+      <MobileDrawer isOpen={drawer.isOpen} onClose={drawer.closeDrawer} onOpenChat={chat.open} />
 
       <main id="main">
         <Hero />
@@ -54,7 +57,8 @@ function AppInner() {
 
       <Footer />
       <CommandPalette palette={palette} />
-      <Dock />
+      <Dock onOpenChat={chat.open} />
+      <AiChat chat={chat} />
     </>
   );
 }
