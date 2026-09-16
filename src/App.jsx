@@ -39,13 +39,14 @@ function AppInner() {
       <Nav
         scrolled={scrolled}
         onOpenCommandPalette={palette.open}
+        onOpenChat={chat.open}
         onToggleDrawer={drawer.toggle}
         drawerOpen={drawer.isOpen}
       />
       <MobileDrawer isOpen={drawer.isOpen} onClose={drawer.closeDrawer} onOpenChat={chat.open} />
 
       <main id="main">
-        <Hero />
+        <Hero onOpenChat={chat.open} />
         <Marquee />
         <About />
         <Skills />
@@ -55,7 +56,7 @@ function AppInner() {
         <Contact />
       </main>
 
-      <Footer />
+      <Footer onOpenChat={chat.open} />
       <CommandPalette palette={palette} />
       <Dock onOpenChat={chat.open} />
       <AiChat chat={chat} />

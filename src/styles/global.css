@@ -1160,6 +1160,7 @@ footer{
 }
 @media(max-width:768px){
   .cmd-trigger-btn{display:none}
+  .nav-ai-btn{display:none}
   .floating-dock{display:none}
 }
 
@@ -1475,6 +1476,74 @@ footer{
   .ai-chat-msg{max-width:94%}
   .ai-chat-log{padding:1rem}
 }
+
+
+/* ══════════════════════════════════════════
+   AI PRESENCE — nav pill, hero CTA, footer link
+   The assistant is a selling point, so it appears in several
+   high-traffic spots rather than only the floating dock. All three
+   reuse the .ai-bot-eye / .ai-bot-antenna animation classes defined
+   in the dock section, so the bot blinks wherever it shows up.
+══════════════════════════════════════════ */
+.nav-ai-btn{
+  display:inline-flex;align-items:center;gap:.45rem;
+  font-family:'Space Grotesk',sans-serif;font-size:12.5px;font-weight:600;
+  color:var(--amber);
+  background:var(--amber-muted);
+  border:1px solid rgba(245,166,35,0.28);
+  border-radius:20px;
+  padding:.45rem .9rem;min-height:36px;
+  cursor:none;white-space:nowrap;
+  transition:background 200ms,border-color 200ms,transform 200ms var(--spring),box-shadow 200ms;
+}
+.nav-ai-btn:hover{
+  background:rgba(245,166,35,0.18);
+  border-color:rgba(245,166,35,0.5);
+  transform:translateY(-1px);
+  box-shadow:0 8px 20px rgba(245,166,35,0.18);
+}
+.nav-ai-btn:focus-visible{outline:2px solid var(--amber);outline-offset:3px}
+.nav-ai-icon{flex-shrink:0}
+
+.btn-ai{
+  position:relative;
+  display:inline-flex;align-items:center;gap:.6rem;
+  font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:600;
+  color:var(--amber);
+  background:var(--amber-muted);
+  border:1px solid rgba(245,166,35,0.35);
+  border-radius:var(--r-sm);
+  padding:.8rem 1.5rem;min-height:48px;
+  cursor:none;
+  transition:background 200ms,border-color 200ms,transform 200ms var(--spring),box-shadow 200ms;
+}
+.btn-ai:hover{
+  background:rgba(245,166,35,0.18);border-color:var(--amber);
+  transform:translateY(-2px);box-shadow:0 12px 30px rgba(245,166,35,0.22);
+}
+.btn-ai:active{transform:scale(0.97)}
+.btn-ai:focus-visible{outline:2px solid var(--amber);outline-offset:3px}
+.btn-ai svg{flex-shrink:0}
+.btn-ai-glow{
+  position:absolute;inset:-2px;border-radius:inherit;
+  border:1px solid var(--amber);opacity:0;pointer-events:none;
+  animation:ai-bot-ring-ping 2.8s cubic-bezier(0,0,0.2,1) infinite;
+}
+.btn-ai-hint{
+  font-family:'Space Mono',monospace;font-size:9.5px;
+  text-transform:uppercase;letter-spacing:.1em;
+  color:var(--black);background:var(--amber);
+  border-radius:20px;padding:2px 7px;
+}
+
+.footer-ai-link{
+  font:inherit;color:var(--amber);
+  background:none;border:none;padding:0;
+  cursor:none;text-decoration:underline;text-underline-offset:3px;
+  transition:color 200ms;
+}
+.footer-ai-link:hover{color:var(--amber-bright)}
+.footer-ai-link:focus-visible{outline:2px solid var(--amber);outline-offset:2px;border-radius:3px}
 
 /* ══════════════════════════════════════════
    TOAST NOTIFICATION

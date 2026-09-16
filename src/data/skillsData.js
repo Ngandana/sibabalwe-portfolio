@@ -13,6 +13,7 @@ export const BENTO = [
   { label: 'Backend', title: 'Server-side', tags: ['Spring Boot', 'Node.js', 'FastAPI', 'REST APIs', 'JWT Auth'] },
   { label: 'Data', title: 'Databases', tags: ['PostgreSQL', 'MySQL', 'ERD Design', 'Query Optimisation'] },
   { label: 'Tooling', title: 'Dev ops & tools', tags: ['Git', 'GitHub Actions', 'Docker', 'Linux/Unix', 'Railway', 'Render'] },
+  { label: 'AI', title: 'AI integration', highlight: true, tags: ['Gemini API', 'LLM Integration', 'Prompt Engineering', 'Streaming Responses', 'Context Grounding', 'Serverless APIs'] },
   {
     label: 'Process',
     title: 'Methodology & practice',
