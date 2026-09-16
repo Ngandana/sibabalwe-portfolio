@@ -1547,6 +1547,47 @@ footer{
 }
 #dock-top-btn.visible{opacity:1;transform:translateY(0)}
 
+/* AI dock button — animated so it reads as "AI" at a glance, not just
+   another static icon. The float/blink/ring animations live on an inner
+   wrap + the SVG's own children, never on .dock-btn's `transform` itself,
+   so they don't fight the existing hover scale-up. */
+.ai-bot-wrap{
+  position:relative;
+  display:flex;align-items:center;justify-content:center;
+  animation:ai-bot-float 3.6s ease-in-out infinite;
+}
+.ai-bot-ring{
+  position:absolute;inset:-6px;
+  border-radius:50%;
+  border:1.5px solid var(--amber);
+  opacity:0;
+  animation:ai-bot-ring-ping 2.6s cubic-bezier(0,0,0.2,1) infinite;
+  pointer-events:none;
+}
+.ai-bot-eye{
+  transform-box:fill-box;transform-origin:center;
+  animation:ai-bot-blink 4.2s ease-in-out infinite;
+}
+.ai-bot-eye-2{animation-delay:.08s}
+.ai-bot-antenna{
+  transform-box:fill-box;transform-origin:center;
+  animation:ai-bot-blip 1.7s ease-in-out infinite;
+}
+@keyframes ai-bot-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+@keyframes ai-bot-ring-ping{
+  0%{transform:scale(0.85);opacity:.55}
+  70%,100%{transform:scale(1.3);opacity:0}
+}
+@keyframes ai-bot-blink{
+  0%,92%,100%{transform:scaleY(1)}
+  95%{transform:scaleY(0.12)}
+}
+@keyframes ai-bot-blip{
+  0%,100%{opacity:1;transform:scale(1)}
+  50%{opacity:.4;transform:scale(0.7)}
+}
+
+
 /* ══════════════════════════════════════════
    COPY EMAIL BUTTON
 ══════════════════════════════════════════ */
