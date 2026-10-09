@@ -1,7 +1,8 @@
 export const SHOT_URLS = {
   itsm: 'https://api.microlink.io/?url=https%3A%2F%2Fpillar5ticket-system.vercel.app%2F&screenshot=true&meta=false&embed=screenshot.url',
   compass: 'https://api.microlink.io/?url=https%3A%2F%2Fcompass-fisheries.vercel.app%2F&screenshot=true&meta=false&embed=screenshot.url',
-  pitstop: 'https://api.microlink.io/?url=https%3A%2F%2Fpitstop-opal.vercel.app%2F&screenshot=true&meta=false&embed=screenshot.url'
+  pitstop: 'https://api.microlink.io/?url=https%3A%2F%2Fpitstop-opal.vercel.app%2F&screenshot=true&meta=false&embed=screenshot.url',
+  saltblade: 'https://api.microlink.io/?url=https%3A%2F%2Fsalt-and-blade.vercel.app%2F&screenshot=true&meta=false&embed=screenshot.url'
 };
 
 // Live projects first, then projects still in production.
@@ -25,8 +26,25 @@ export const PROJECTS = [
     shotAlt: 'Screenshot of the IT Service Management Platform dashboard'
   },
   {
-    id: 'p5',
+    id: 'p7',
     num: '02',
+    type: 'Full-Stack · Booking Website',
+    title: 'Salt & Blade Barber Co.',
+    desc: (
+      <>Barbershop website with a multi-step <strong>online booking flow</strong>, server-side validation, and <strong>double-booking prevention</strong> enforced by a Postgres exclusion constraint. Calendar export to Google, Outlook, and <strong>.ics</strong>, with Cape Town (SAST) time handling. Built with Next.js and Supabase as a Talent Forge developer assessment.</>
+    ),
+    stack: ['Next.js', 'React', 'Supabase', 'PostgreSQL', 'Tailwind CSS', 'Vercel'],
+    badges: [{ kind: 'live', label: 'Live' }],
+    githubHref: 'https://github.com/Ngandana/Salt-and-blade_assignment',
+    githubLabel: 'View Salt & Blade on GitHub',
+    liveHref: 'https://salt-and-blade.vercel.app/',
+    liveLabel: 'View Salt & Blade live site',
+    shot: 'saltblade',
+    shotAlt: 'Screenshot of the Salt & Blade Barber Co. website'
+  },
+  {
+    id: 'p5',
+    num: '03',
     type: 'Full-Stack · Operations App',
     title: 'Compass Fisheries Order & Management App',
     desc: (
@@ -43,7 +61,7 @@ export const PROJECTS = [
   },
   {
     id: 'p6',
-    num: '03',
+    num: '04',
     revealDelay: 1,
     type: 'Full-Stack · Fleet Management SaaS',
     title: 'Pitstop — Fleet Management Platform',
@@ -61,7 +79,7 @@ export const PROJECTS = [
   },
   {
     id: 'p1',
-    num: '04',
+    num: '05',
     type: 'Full-Stack · Web App',
     title: 'Arts & Craft E-Commerce Platform',
     desc: (
@@ -76,7 +94,7 @@ export const PROJECTS = [
   },
   {
     id: 'p3',
-    num: '05',
+    num: '06',
     revealDelay: 1,
     type: 'Python · REST API',
     title: 'University Research Collaboration Platform',
@@ -92,7 +110,7 @@ export const PROJECTS = [
   },
   {
     id: 'p4',
-    num: '06',
+    num: '07',
     type: 'Desktop App · Java',
     title: 'Scooter Rental Service Application',
     desc: (

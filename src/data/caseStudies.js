@@ -79,5 +79,19 @@ export const CASE_STUDIES = {
     ],
     stack: ['Next.js', 'TypeScript', 'Supabase', 'PostgreSQL', 'Drizzle ORM', 'Tailwind CSS', 'Zod', 'Vitest'],
     shot: 'pitstop'
+  },
+  p7: {
+    type: 'Full-Stack · Booking Website',
+    title: 'Salt & Blade Barber Co.',
+    problem: 'A barbershop needed a complete website where customers can book appointments online without double-booking barbers, and add the appointment straight to their calendar. Built as a Talent Forge Junior Full-Stack Developer assessment.',
+    approach: 'Built with Next.js and Supabase (Postgres). A multi-step booking flow (service, barber, date and time, details, review, confirmation) with server-side validation, a promo code, and slot re-checking on submit. Double-booking is prevented by a Postgres exclusion constraint. All booking logic runs in Cape Town time (SAST) and is converted to UTC only for storage and calendar files. Calendar export supports Google Calendar, Outlook, and a server-generated .ics file with a reminder. Includes SEO metadata, Open Graph image, sitemap, structured data, and accessibility work (skip link, focus rings, reduced-motion support, native dialog elements).',
+    impact: [
+      'Live and publicly deployed on Vercel',
+      'Double-booking prevented at the database level, not just in the UI',
+      'Calendar export to Google Calendar, Outlook, and .ics',
+      'Accessibility and SEO built in: skip link, reduced-motion support, sitemap, and structured data'
+    ],
+    stack: ['Next.js', 'React', 'Supabase', 'PostgreSQL', 'Tailwind CSS', 'Vercel'],
+    shot: 'saltblade'
   }
 };

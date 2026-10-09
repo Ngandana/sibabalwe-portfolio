@@ -21,6 +21,7 @@ export const COMMANDS = [
     group: 'Live Projects',
     items: [
       { name: 'ITSM Platform', sub: 'pillar5ticket-system.vercel.app', icon: 'globe', href: 'https://pillar5ticket-system.vercel.app/', external: true, badge: 'Live' },
+      { name: 'Salt & Blade Barber Co.', sub: 'salt-and-blade.vercel.app', icon: 'globe', href: 'https://salt-and-blade.vercel.app/', external: true, badge: 'Live' },
       { name: 'Compass Fisheries', sub: 'compass-fisheries.vercel.app', icon: 'globe', href: 'https://compass-fisheries.vercel.app/', external: true, badge: 'Live' },
       { name: 'GitHub Profile', sub: 'github.com/Ngandana', icon: 'github', href: 'https://github.com/Ngandana', external: true }
     ]
